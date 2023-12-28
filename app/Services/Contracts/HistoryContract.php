@@ -2,7 +2,7 @@
 
 namespace App\Services\Contracts;
 
-interface NegaraContract
+interface HistoryContract
 {
         public function paginated(array $request);
 
@@ -14,5 +14,5 @@ interface NegaraContract
 
         public function delete($id);
 
-        public function selectNama();
+        public function getTahun();
 }

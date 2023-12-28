@@ -71,7 +71,15 @@ class NegaraService extends BaseRepository implements NegaraContract
                 if (!$update) {
                         throw new \Exception("Negara Gagal Diupdate", 400);
                 }
-                
+
                 return $dataNew;
+        }
+
+        /**
+         * Select nama
+         */
+        public function selectNama()
+        {
+                return $this->model->select('id', 'nama')->get();
         }
 }
