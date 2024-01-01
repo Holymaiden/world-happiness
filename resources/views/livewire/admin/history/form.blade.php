@@ -37,6 +37,10 @@
                         <label>Kebebasan</label>
                         <input type="number" class="form-control" name="kebebasan" wire:model="kebebasan">
                     </div>
+                    <div class="form-group">
+                        <label>Score</label>
+                        <input type="number" class="form-control" name="score" wire:model="score">
+                    </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                     <button type="button" class="btn btn-primary" wire:click="submitForm">{{ $btnName }}</button>

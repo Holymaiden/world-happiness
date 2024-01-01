@@ -32,7 +32,8 @@ class HistoryService extends BaseRepository implements HistoryContract
                                 return $query->where('tahun', 'like', '%' . $request['query'] . '%')
                                         ->orWhere('ekonomi', 'like', '%' . $request['query'] . '%')
                                         ->orWhere('kesehatan', 'like', '%' . $request['query'] . '%')
-                                        ->orWhere('kebebasan', 'like', '%' . $request['query'] . '%');
+                                        ->orWhere('kebebasan', 'like', '%' . $request['query'] . '%')
+                                        ->orWhere('score', 'like', '%' . $request['query'] . '%');
                         })
                         ->orderBy($request['sort_field'], $request['sort'])
                         ->paginate($request['per_page']);
@@ -51,7 +52,7 @@ class HistoryService extends BaseRepository implements HistoryContract
                         'ekonomi' => $request['ekonomi'],
                         'kesehatan' => $request['kesehatan'],
                         'kebebasan' => $request['kebebasan'],
-
+                        'score' => $request['score'],
                 ]);
 
                 // Check if data is created
@@ -77,6 +78,7 @@ class HistoryService extends BaseRepository implements HistoryContract
                 $dataNew['ekonomi'] = $request['ekonomi'];
                 $dataNew['kesehatan'] = $request['kesehatan'];
                 $dataNew['kebebasan'] = $request['kebebasan'];
+                $dataNew['score'] = $request['score'];
 
                 $update = $dataOld->update($dataNew);
 

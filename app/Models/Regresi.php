@@ -16,6 +16,7 @@ class Regresi extends Model
                 'ekonomi',
                 'kesehatan',
                 'kebebasan',
+                'score'
         ];
 
         protected $hidden = [

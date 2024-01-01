@@ -58,6 +58,7 @@
                              <th>Ekonomi</th>
                              <th>Kesehatan</th>
                              <th>Kebebasan</th>
+                             <th>Score</th>
                              <th>Action</th>
                          </tr>
                          @forelse ($data as $i => $v)
@@ -81,6 +82,9 @@
                                      {{ $v->kebebasan }}
                                  </td>
                                  <td>
+                                     {{ $v->score }}
+                                 </td>
+                                 <td>
                                      <a class="btn btn-warning"
                                          wire:click.prevent="$dispatch('showForm', { id: {{ $v->id }} })">
                                          <i class="fas fa-edit"></i>
@@ -93,7 +97,7 @@
                              </tr>
                          @empty
                              <tr>
-                                 <td colspan="7" class="text-center">Data tidak ditemukan</td>
+                                 <td colspan="8" class="text-center">Data tidak ditemukan</td>
                              </tr>
                          @endforelse
                      </table>

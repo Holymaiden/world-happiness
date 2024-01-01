@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public $id = 0, $negara_id, $tahun, $ekonomi, $kesehatan, $kebebasan;
+    public $id = 0, $negara_id, $tahun, $ekonomi, $kesehatan, $kebebasan, $score;
 
     #[Layout('layouts.app')]
     #[Title('Dashboard | History')]
@@ -28,6 +28,7 @@ class Index extends Component
             'ekonomi' => 'required',
             'kesehatan' => 'required',
             'kebebasan' => 'required',
+            'score' => 'required',
         ]);
 
         if ($this->id == 0) {
@@ -38,6 +39,7 @@ class Index extends Component
                     'ekonomi' => $this->ekonomi,
                     'kesehatan' => $this->kesehatan,
                     'kebebasan' => $this->kebebasan,
+                    'score' => $this->score,
                 ]);
 
                 $this->dispatch('show-message', [
@@ -60,6 +62,7 @@ class Index extends Component
                     'ekonomi' => $this->ekonomi,
                     'kesehatan' => $this->kesehatan,
                     'kebebasan' => $this->kebebasan,
+                    'score' => $this->score,
                 ], $this->id);
 
                 $this->dispatch('show-message', [
