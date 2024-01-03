@@ -96,4 +96,9 @@ class HistoryService extends BaseRepository implements HistoryContract
         {
                 return DB::table('regresi')->select('tahun')->distinct()->get();
         }
+
+        public function getSum($field, $tahun)
+        {
+                return $this->model->where('tahun', $tahun)->sum($field);
+        }
 }

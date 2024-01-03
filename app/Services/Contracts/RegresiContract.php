@@ -15,4 +15,6 @@ interface RegresiContract
         public function regresi();
 
         public function prediction(int $per_page);
+
+        public function getStatistic();
 }

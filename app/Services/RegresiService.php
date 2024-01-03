@@ -13,7 +13,7 @@ class RegresiService implements RegresiContract
         /**
          * @var
          */
-        protected $model, $regresi, $sum, $new_regresi;
+        protected $model, $regresi, $sum, $new_regresi, $prediction;
 
         public function __construct($tahun = '2019', $orderBy = 'score')
         {
@@ -152,10 +152,30 @@ class RegresiService implements RegresiContract
                         return (float) $b['prediction_score'] <=> (float) $a['prediction_score'];
                 });
 
+                $this->prediction = $prediction;
+
                 // Paginate prediction
                 $prediction = $this->ArrToCollection($prediction, $per_page);
 
                 return $prediction;
+        }
+
+        public function getStatistic()
+        {
+                $prediction = $this->prediction;
+
+                $data = [];
+                $categori = [];
+
+                foreach ($prediction as $value) {
+                        $categori[] = $value['nama'];
+                        $data[] = $value['prediction_score'];
+                }
+
+                return [
+                        'categori' => $categori,
+                        'data' => $data,
+                ];
         }
 
         public function divZero($x, $y)

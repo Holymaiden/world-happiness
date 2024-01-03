@@ -5,6 +5,7 @@ use App\Livewire\Admin\Dashboard\Index as AdminDashboard;
 use App\Livewire\Admin\Negara\Index as NegaraDashboard;
 use App\Livewire\Admin\History\Index as HistoryDashboard;
 use App\Livewire\Admin\ReportRegresi\Index as ReportRegresiDashboard;
+use App\Livewire\Home\Landing\Index as HomeLanding;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,7 @@ use App\Livewire\Admin\ReportRegresi\Index as ReportRegresiDashboard;
 |
 */
 
-Route::get('/', function () {
-    return redirect(route('login'));
-});
+Route::get('/', HomeLanding::class)->name('home');
 
 Route::group(['prefix' => '',  'namespace' => 'App\Livewire\Admin',  'middleware' => ['auth']], function () {
     Route::group(['prefix' => 'dashboard'], function () {

@@ -15,4 +15,6 @@ interface NegaraContract
         public function delete($id);
 
         public function selectNama();
+
+        public function getCount();
 }

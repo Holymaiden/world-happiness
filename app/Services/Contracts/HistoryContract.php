@@ -15,4 +15,6 @@ interface HistoryContract
         public function delete($id);
 
         public function getTahun();
+
+        public function getSum($field, $tahun);
 }

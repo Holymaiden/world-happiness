@@ -1,76 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Poco admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Poco admin template, dashboard template, flat admin template, responsive admin template, web app (Laravel 8)">
+    <meta name="description"
+        content="Poco admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Poco admin template, dashboard template, flat admin template, responsive admin template, web app (Laravel 8)">
     <meta name="author" content="pixelstrap">
-    <link rel="icon" href="{{route('/')}}/assets/images/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="{{route('/')}}/assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
     <title>{{ $title }} &mdash; Poco</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('brisik.ico') }}">
 
-    <!-- General CSS Files -->
-    <link rel="stylesheet" href="{{ asset('library/bootstrap/dist/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    @include('components.home.css')
 
     @stack('style')
 
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/components.css') }}">
-
-    <!-- Start GA -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-94034622-3');
-    </script>
-    <!-- END GA -->
     @livewireStyles
 </head>
 
 <body>
-    <div id="app">
-        <div class="main-wrapper">
-            <!-- Header -->
-            @include('components.header')
+    <!-- Loader starts-->
+    <div class="loader-wrapper">
+        <div class="typewriter">
+            <h1>New Era For Happiness..</h1>
+        </div>
+    </div>
+    <!-- Loader ends-->
+    <!-- page-wrapper Start-->
+    <div class="page-wrapper">
+        <!-- Page Header Start-->
+        @include('components.home.header')
+        <!-- Page Header Ends -->
+        <!-- Page Body Start-->
+        <div class="page-body-wrapper">
+            <div class="page-body" style="margin-left: 0px">
+                <div class="container-fluid">
+                    <div class="page-header">
+                        <div class="row">
+                            <div class="col-lg-6 main-header">
+                                @yield('breadcrumb-title')
+                            </div>
+                            <div class="col-lg-6 breadcrumb-right">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ route('home') }}"><i
+                                                class="pe-7s-home"></i></a></li>
+                                    @yield('breadcrumb-items')
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content -->
+                {{ $slot }}
 
-            <!-- Sidebar -->
-            @include('components.sidebar')
-
-            <!-- Content -->
-            {{ $slot }}
-
-            <!-- Footer -->
-            @include('components.footer')
+            </div>
+            <!-- footer start-->
+            @include('components.home.footer')
         </div>
     </div>
 
-    <!-- General JS Scripts -->
-    <script src="{{ asset('library/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('library/popper.js/dist/umd/popper.js') }}"></script>
-    <script src="{{ asset('library/tooltip.js/dist/umd/tooltip.js') }}"></script>
-    <script src="{{ asset('library/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('library/jquery.nicescroll/dist/jquery.nicescroll.min.js') }}"></script>
-    <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
-    <script src="{{ asset('library/moment/min/moment.min.js') }}"></script>
-    <script src="{{ asset('js/stisla.js') }}"></script>
-
-    <!-- Template JS File -->
-    <script src="{{ asset('js/scripts.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
+    @include('components.home.script')
     @livewireScripts
     @stack('scripts')
 </body>

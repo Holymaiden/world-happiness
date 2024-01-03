@@ -82,4 +82,9 @@ class NegaraService extends BaseRepository implements NegaraContract
         {
                 return $this->model->select('id', 'nama')->get();
         }
+
+        public function getCount()
+        {
+                return $this->model->count();
+        }
 }
