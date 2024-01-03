@@ -2,12 +2,20 @@
 
 namespace App\Livewire\Admin\ReportRegresi;
 
+use App\Services\Contracts\RegresiContract;
+use Livewire\Attributes\Layout;
+use Livewire\Attributes\On;
+use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
-    public function render()
+    #[Layout('layouts.app')]
+    #[Title('Dashboard | Negara')]
+    public function render(RegresiContract $regresi)
     {
-        return view('livewire.admin.report-regresi.index');
+        $title = 'Report Regresi Linier Berganda';
+        return view('livewire.admin.report-regresi.index', compact('title'));
     }
 }
