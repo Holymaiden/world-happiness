@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>{{ $title }} &mdash; Brisik</title>
+    <title>{{ $title }} &mdash; HAC</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('brisik.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('logo.ico') }}">
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('library/bootstrap/dist/css/bootstrap.min.css') }}">
