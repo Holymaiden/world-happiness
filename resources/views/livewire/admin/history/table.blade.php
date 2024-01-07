@@ -5,6 +5,9 @@
                  <h4>Table</h4>
 
                  <div class="card-header-action">
+                     <a class="btn btn-success mb-md-0 mr-md-2" wire:click.prevent="$dispatch('show-form-import')">Import
+                         <i class="fas fa-upload"></i>
+                     </a>
                      <a class="btn btn-primary" wire:click.prevent="$dispatch('showForm', { id: 0 })">New
                          <i class="fas fa-plus"></i>
                      </a>

@@ -19,6 +19,7 @@
         </div>
     </section>
     <livewire:admin.history.form />
+    <livewire:admin.history.import-from />
 </div>
 
 
@@ -91,6 +92,14 @@
                         @this.call('destroy', data.id)
                     }
                 })
+            })
+
+            @this.on('show-form-import', (data) => {
+                $('#formImport').modal('show')
+            })
+
+            @this.on('close-form-import', () => {
+                $('#formImport').modal('hide')
             })
         })
     </script>
