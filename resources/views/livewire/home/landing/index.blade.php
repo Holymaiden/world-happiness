@@ -6,7 +6,7 @@
 
 @section('breadcrumb-title')
     <h2>Happiness <span>Statistics</span></h2>
-    <h6 class="mb-0">in ASEAN Countries</h6>
+    <h6 class="mb-0">in ASIA Countries</h6>
 @endsection
 
 @section('breadcrumb-items')
