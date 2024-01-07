@@ -5,7 +5,6 @@ namespace App\Services;
 use App\Models\Negara;
 use App\Services\BaseRepository;
 use App\Services\Contracts\NegaraContract;
-use Illuminate\Http\Request;
 
 
 class NegaraService extends BaseRepository implements NegaraContract
@@ -40,6 +39,7 @@ class NegaraService extends BaseRepository implements NegaraContract
                 if (empty($name)) {
                         $data =  $this->model->create([
                                 'nama' => $request['nama'],
+                                'flag' => $request['flag'],
                         ]);
 
                         // Check if data is created
@@ -65,6 +65,7 @@ class NegaraService extends BaseRepository implements NegaraContract
                 $dataNew = [];
 
                 $dataNew['nama'] = $request['nama'];
+                $dataNew['flag'] = $request['flag'];
 
                 $update = $dataOld->update($dataNew);
 

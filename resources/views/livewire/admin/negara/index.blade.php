@@ -1,5 +1,6 @@
 @push('style')
     <!-- CSS Libraries -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/library/flag-icon-css/css/flag-icon.css') }}">
 @endpush
 
 
@@ -55,6 +56,7 @@
                     })
                     @this.set('id', data.id)
                     @this.set('nama', data.nama)
+                    @this.set('flag', data.flag)
                 }
                 $('#formData').modal('show')
             })

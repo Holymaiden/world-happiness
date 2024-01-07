@@ -199,7 +199,8 @@
                                         <tr>
                                             <td>
                                                 <div class="recent-images"><img class="img-fluid"
-                                                        src="{{ asset('/assets/images/dashboard-ecommerce/1.png') }}"
+                                                        style="width: 80px;"
+                                                        src="{{ asset('/library/flag-icon-css/flags/1x1/' . $v['flag'] . '.svg') }}"
                                                         alt=""></div>
                                             </td>
                                             <td>

@@ -11,6 +11,22 @@
                         <label>Negara</label>
                         <input type="text" class="form-control" name="nama" wire:model="nama">
                     </div>
+                    <div class="form-group">
+                        <label>Flag</label>
+                        <div class="selectgroup selectgroup-pills">
+                            @foreach ($flags as $v)
+                                <label class="selectgroup-item">
+                                    <input type="radio" name="icon-input" value="{{ $v }}"
+                                        class="selectgroup-input" wire:model="flag">
+                                    <span
+                                        class="selectgroup-button
+                                        selectgroup-button-icon"><i
+                                            style="width: 18px; height: 18px; line-height: 18px;"
+                                            class="flag-icon flag-icon-{{ $v }}"></i></span>
+                                </label>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                     <button type="button" class="btn btn-primary" wire:click="submitForm">{{ $btnName }}</button>

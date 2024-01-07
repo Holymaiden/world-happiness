@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public $id = 0, $nama = '';
+    public $id = 0, $nama = '', $flag = '';
 
     #[Layout('layouts.app')]
     #[Title('Dashboard | Negara')]
@@ -24,11 +24,12 @@ class Index extends Component
     {
         $this->validate([
             'nama' => 'required',
+            'flag' => 'required',
         ]);
 
         if ($this->id == 0) {
             try {
-                $negara->store(['nama' => $this->nama]);
+                $negara->store(['nama' => $this->nama, 'flag' => $this->flag]);
 
                 $this->dispatch('show-message', [
                     'icon' => "success",
@@ -44,7 +45,7 @@ class Index extends Component
             }
         } else {
             try {
-                $negara->update(['nama' => $this->nama], $this->id);
+                $negara->update(['nama' => $this->nama, 'flag' => $this->flag], $this->id);
 
                 $this->dispatch('show-message', [
                     'icon' => "success",

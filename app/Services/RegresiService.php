@@ -141,6 +141,7 @@ class RegresiService implements RegresiContract
                 foreach ($data as $value) {
                         $prediction[] = [
                                 'nama' => $value->negara->nama,
+                                'flag' => $value->negara->flag,
                                 'prediction_score' => $new_regresi['a'] + $new_regresi['b1'] * $value->ekonomi + $new_regresi['b2'] * $value->kesehatan + $new_regresi['b3'] * $value->kebebasan,
                                 'prediction_ekonomi' => $new_regresi['b1'] * $value->ekonomi,
                                 'prediction_kesehatan' => $new_regresi['b2'] * $value->kesehatan,

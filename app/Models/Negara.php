@@ -11,7 +11,8 @@ class Negara extends Model
 
         protected $table = 'negara';
         protected $fillable = [
-                'nama'
+                'nama',
+                'flag'
         ];
 
         protected $hidden = [

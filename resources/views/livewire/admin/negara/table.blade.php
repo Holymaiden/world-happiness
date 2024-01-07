@@ -33,6 +33,7 @@
                      <table class="table-striped table">
                          <tr>
                              <th class="text-center">No</th>
+                             <th>Flag</th>
                              <th>Nama</th>
                              <th>Action</th>
                          </tr>
@@ -41,6 +42,7 @@
                                  <td class="p-0 text-center">
                                      {{ $i + $data->firstItem() }}
                                  </td>
+                                 <td><i class="flag-icon flag-icon-{{ $v->flag }}"></i></td>
                                  <td>
                                      {{ $v->nama }}
                                  </td>
@@ -57,7 +59,7 @@
                              </tr>
                          @empty
                              <tr>
-                                 <td colspan="3" class="text-center">Data tidak ditemukan</td>
+                                 <td colspan="4" class="text-center">Data tidak ditemukan</td>
                              </tr>
                          @endforelse
                      </table>
