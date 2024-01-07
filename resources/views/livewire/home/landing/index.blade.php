@@ -135,8 +135,14 @@
             <div class="col-xl-12 xl-100 box-col-12">
                 <div class="card crypto-revenue">
                     <div class="card-header pb-0 d-flex">
-                        <h5>Happiness Statistics<span
-                                class="badge badge-pill pill-badge-secondary f-14 f-w-600">2021</span></h5>
+                        <h5>Happiness Statistics
+                            @foreach ($years as $v)
+                                <a wire:click="changeYear({{ $v->tahun }})" href="javascript:void(0)">
+                                    <span class="badge badge-pill pill-badge-secondary f-14 f-w-600"
+                                        @if ($tahun == $v->tahun) style="background-color:#6610f2;color:#fff" @endif>{{ $v->tahun + 1 }}</span>
+                                </a>
+                            @endforeach
+                        </h5>
                         <ul class="creative-dots">
                             <li class="bg-primary big-dot"></li>
                             <li class="bg-secondary semi-big-dot"></li>

@@ -34,11 +34,18 @@ class Index extends Component
         $kesehatanSum = $historyContract->getSum('kesehatan', $tahun);
         $kebebasanSum = $historyContract->getSum('kebebasan', $tahun);
 
-        return view('livewire.home.landing.index', compact('data', 'negaraCount', 'ekonomiSum', 'kesehatanSum', 'kebebasanSum', 'tahun', 'statistic'));
+        $years = $historyContract->getTahun();
+
+        return view('livewire.home.landing.index', compact('data', 'negaraCount', 'ekonomiSum', 'kesehatanSum', 'kebebasanSum', 'tahun', 'statistic', 'years'));
     }
 
     public function more()
     {
         $this->perPage = $this->perPage + 5;
+    }
+
+    public function changeYear($year)
+    {
+        $this->tahunFilter = $year;
     }
 }
